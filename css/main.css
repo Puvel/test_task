@@ -1,0 +1,111 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.folders_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 50px);
+  gap: 20px;
+  justify-content: start;
+  padding: 20px;
+}
+
+.folder {
+  padding-top: 48px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: url('../image/folder_icon.svg') no-repeat top center;
+}
+
+.folder_text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.files_table {
+  padding: 5px;
+}
+
+.filesHeader {
+  padding: 5px 0;
+  text-align: left;
+  font-size: 14px;
+}
+
+.filesHeader:not(:last-child) {
+  border-right: 1px solid #ffffff;
+}
+
+.filesHeader:first-child {
+  width: 50%;
+}
+
+.filesHeader:not(:first-child) {
+  padding-left: 5px;
+  width: 25%;
+}
+.filesName,
+.filesSize,
+.filesTime {
+  padding: 10px 0;
+}
+
+.filesName {
+  width: 50%;
+  padding-left: 30px;
+  background: url('../image/file_icon.svg') no-repeat center left;
+  background-size: 25px;
+  font-size: 14px;
+}
+
+.filesSize,
+.filesTime {
+  font-size: 12px;
+  width: 25%;
+}
+
+@media (min-width: 992px) {
+  .folders_list {
+    grid-template-columns: repeat(12, minmax(60px, 1fr));
+  }
+
+  .files_table {
+    padding: 20px;
+    width: 75%;
+  }
+
+  .filesHeader {
+    font-size: 16px;
+    padding: 10px 0;
+    cursor: pointer;
+  }
+
+  .filesHeader:not(:first-child) {
+    padding-left: 10px;
+  }
+
+  .filesHeader:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .filesName {
+    font-size: 16px;
+  }
+
+  .filesSize,
+  .filesTime {
+    font-size: 14px;
+  }
+}
